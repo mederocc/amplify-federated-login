@@ -1,0 +1,61 @@
+/* CardsContainer.module.css */
+
+.links-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border: solid green 3px; */
+  margin-top: -3rem;
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+  min-width: 55%;
+  width: 55%;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2.21875rem 0.625rem;
+  gap: 0.625rem;
+  cursor: default;
+  width: 100%;
+  /* border: solid blue 3px; */
+  min-height: 95%;
+  height: 95%;
+}
+
+.arrow-container {
+  position: absolute;
+  /* border: solid purple 2px; */
+  z-index: 100;
+  display: flex;
+  min-width: 4rem;
+  justify-content: space-between;
+  transition: opacity 1s ease-in; /* Apply transition to transform and opacity */
+  margin-top: 79vh;
+}
+
+.arrow-hidden {
+  /* border: solid purple 2px; */
+  opacity: 0; /* Set opacity to 0 for hidden state */
+}
+
+.arrowDisabled {
+  cursor: pointer;
+  fill: #45b36a28;
+  margin: 0.5rem;
+}
+
+.arrow {
+  cursor: pointer;
+  fill: #45b36a;
+  margin: 0.5rem;
+  transition: transform 0.1s ease-in-out; /* Add a smooth transition effect */
+  user-select: none;
+}
+
+.arrow-clicked {
+  transform: scale(1.5); /* You can adjust the scale factor as needed */
+  transition: transform 0.1s ease-in-out; /* Add a smooth transition effect */
+}

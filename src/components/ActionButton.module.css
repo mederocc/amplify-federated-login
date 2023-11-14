@@ -1,0 +1,18 @@
+.button {
+  margin-left: 2.5rem;
+  display: flex;
+  padding: 0.94rem 1.88rem;
+  align-items: flex-start;
+  border-radius: 0;
+  background-color: #45b36acb;
+  color: #ffffff;
+  line-height: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-colo 0.3s ease; /* Add transition properties */
+}
+
+/* Hover style */
+.button:hover {
+  background-color: #ffffff; /* Change background color on hover */
+  color: #45b36a; /* Change text color on hover */
+  border-color: #ffffff;
+}

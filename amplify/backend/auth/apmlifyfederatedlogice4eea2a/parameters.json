@@ -1,0 +1,23 @@
+{
+  "authSelections": "identityPoolAndUserPool",
+  "resourceName": "apmlifyfederatedlogice4eea2a",
+  "serviceType": "imported",
+  "region": "sa-east-1",
+  "usernameAttributes": [
+    "email"
+  ],
+  "authProvidersUserPool": [],
+  "requiredAttributes": [],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [
+    "Requires Lowercase",
+    "Requires Uppercase",
+    "Requires Numbers",
+    "Requires Symbols"
+  ],
+  "mfaConfiguration": "OFF",
+  "autoVerifiedAttributes": [
+    "email"
+  ],
+  "mfaTypes": []
+}

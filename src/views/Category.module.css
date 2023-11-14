@@ -1,0 +1,21 @@
+.outer-category-container {
+  max-width: 1287px;
+  /* border: solid red 3px; */
+  margin: auto;
+  padding: 11rem 0rem;
+  margin-bottom: 5rem;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-container {
+  display: flex;
+  /* border: solid purple 3px; */
+}
+
+.shorter-margin {
+  /* border: solid red 3px; */
+  margin-bottom: 0;
+}

@@ -1,0 +1,62 @@
+.description-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
+  opacity: 1; /* Initially, set opacity to 1 */
+  transform: translateX(0); /* Initially, set translateX to 0 */
+  transition: transform 0.6s ease-out, opacity 1s ease-in; /* Apply transition to transform and opacity */
+  cursor: default;
+}
+
+/* .description-container img {
+
+} */
+
+.image-container {
+  margin-top: 1rem;
+  filter: brightness(0.6);
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.description-hidden {
+  opacity: 0; /* Set opacity to 0 for hidden state */
+  transform: translateX(
+    -500px
+  ); /* Translate along the X-axis for hidden state */
+}
+
+.title-container {
+  color: #45b36a;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4rem; /* 160% */
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.message {
+  color: #fff;
+  font-family: Inter;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.3rem; /* 110% */
+  margin-bottom: 1.25rem;
+}
+
+.description {
+  color: #fff;
+  font-family: Heebo;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5rem; /* 150% */
+}

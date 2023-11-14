@@ -1,0 +1,36 @@
+.banner-container {
+  max-width: 1287px;
+  height: 7rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 12rem;
+  margin-bottom: -5rem;
+}
+
+.top-spacing {
+  /* border: solid red 3px; */
+  margin-top: 8rem;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4rem; /* 160% */
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  margin: 1rem 0rem;
+}
+
+.line {
+  flex: 1;
+  border: 2px solid #45b36a; /* Customize the line appearance as needed */
+  margin: 0 10px;
+}

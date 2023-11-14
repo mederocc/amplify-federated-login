@@ -1,0 +1,102 @@
+.card {
+  margin: 0 0.5rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 2.0625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  justify-content: space-between;
+  border: solid rgba(0, 128, 0, 0) 1px;
+  /* border: solid red 1px; */
+  min-height: 17rem;
+  height: 21rem;
+
+  max-height: 21rem;
+  transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out,
+    height 0.3s ease-in-out, transform 0.5s ease, border 0.3s ease-in-out,
+    opacity 1s ease-in-out, fill 0.3s ease-in-out;
+  fill: #ffffff;
+}
+
+.hidden-top {
+  transform: translate(0, -6rem);
+  opacity: 0;
+}
+.hidden-right {
+  transform: translate(6rem, 0);
+  opacity: 0;
+}
+.hidden-bottom {
+  transform: translate(0, 6rem);
+  opacity: 0;
+}
+.hidden-left {
+  transform: translate(-6rem, 0);
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.card:hover {
+  background-color: #101721;
+  transform: scale(1.05); /* Scale up slightly when hovered */
+  border: solid #45b36a 1px;
+  fill: #45b36a;
+}
+
+.icon-container {
+  max-width: 3.8rem;
+  max-height: 3.8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  /* Transition to smoothly change fill on hover */
+}
+
+.icon-container image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* This ensures the entire image is visible */
+}
+
+.card-title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  /* border: solid red 3px; */
+  width: 11vw;
+  min-width: 100%;
+}
+
+.card-subtitle {
+  color: #fff;
+  font-family: Heebo;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4rem; /* 160% */
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  color: #45b36a;
+  text-align: center;
+  font-family: Heebo;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 160% */
+  border-bottom: 1px solid #45b36a;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}

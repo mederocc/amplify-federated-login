@@ -1,38 +1,415 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Heebo:wght@300;500&family=Inter:wght@300;400;600;700&family=Rubik:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
+  background-color: #060606;
+  /* border: solid blue 3px; */
+  overflow-x: hidden;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 100vw;
+  max-width: 100vw;
+
+  overscroll-behavior: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+  margin: auto;
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
+
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  color: #eeeeef;
+  position: fixed;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 0;
+  z-index: 9999;
+  max-width: 1287px;
+  /* border: solid purple 2px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* header => nav-area => menus */
+.nav-area {
+  display: flex;
+  background-color: #06060600;
+  justify-content: space-between;
+  /* border: solid yellow 3px; */
+  width: 100%;
+  padding: 0.4rem 1rem;
+  align-content: center;
+  min-height: 6.8rem;
+}
+
+.logo {
+  position: absolute;
+  height: 100%;
+  /* border: solid red 3px; */
+  top: 0px;
+  padding: 1.3rem 2rem;
+}
+
+.menus {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  /* border: solid blue 2px; */
+  max-height: 4rem;
+  padding-top: 0.3rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.menu-item-container {
+  /* border: green solid 1px; */
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.menu-items {
+  position: relative;
+  font-size: 0.9375rem;
+  /* border: solid red 2px; */
+  margin-left: 1rem;
+  margin-top: 4px;
+}
+
+.vertical-item-container {
+  background-color: #0f0f11;
+}
+
+.vertical-menu-items {
+  position: relative;
+  font-size: 0.9375rem;
+  background-color: #0f0f11;
+  border: solid #0f0f11 5px;
+  margin-left: 0rem;
+  margin-top: 0rem;
+  transition: background-color 0.4s ease-in-out;
+  border-radius: 10px;
+}
+
+.vertical-menu-items:hover {
+  background-color: #333339;
+}
+
+.first-dropdown {
+  margin-top: 36px;
+}
+
+.menu-items a {
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-items button {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+button span {
+  margin-left: 3px;
+}
+
+.menu-items > a,
+.menu-items button {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  fill: white;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    fill 0.25s ease-in-out; /* Add transitions */
+}
+
+.menu-items a:hover,
+.menu-items button:hover {
+  color: #45b36aec;
+  fill: #45b36aec;
+}
+
+.down-arrow {
+  margin-left: 0.6rem;
+}
+
+/* CSS for the Dropdown component */
+.dropdown {
+  position: absolute;
+  padding: 0px;
+  font-size: 0.9375rem;
+  z-index: 9999;
+  min-width: 10rem;
+  list-style: none;
+  border-radius: 2px;
+  visibility: hidden; /* Initially, the dropdown is hidden */
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s ease-in-out;
+  /* border: solid purple 3px; */
+  /* top: 0px; */
+}
+
+.dropdown.show {
+  visibility: visible; /* Make the dropdown visible */
+  opacity: 1; /* Make the dropdown gradually appear */
+}
+
+.dropdown .dropdown-submenu {
+  position: absolute;
+  left: 100%;
+  top: -5px;
+  border-radius: 2px;
+  /* border: solid blue 3px; */
+
+  padding: 0px;
+  padding-top: 0px;
+}
+
+/* content */
+
+.content {
+  width: 100%;
+  /* border: solid blue 3px; */
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+.content a {
+  color: #cc3852;
+  margin-right: 10px;
+}
+
+/* Home Component */
+
+.landing-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* border: solid red 3px; */
 }
 
-.App-link {
-  color: #61dafb;
+/* Background image in Home component*/
+
+/*STARTS HERE */
+
+.image-container {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  top: -5.2rem;
+
+  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+  transition: width 1.1s ease, height 1.1s ease, opacity 1.1s ease,
+    top 1.1s ease, padding 1.1s ease;
+  max-width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loaded {
+  opacity: 1;
+  transition: width 1.1s ease, height 1.1s ease, opacity 1.1s ease,
+    top 1.1s ease;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8),
+    #060606,
+    #060606
+  );
+}
+
+.image-container img {
+  object-fit: fill;
+}
+
+/*ENDS HERE*/
+
+/* Text in Home Component*/
+
+.hero {
+  /* border: solid blue 2px; */
+  margin: auto;
+  margin-top: 46vh;
+  width: 60rem;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: solid red 3px; */
+}
+
+.logo-container {
+  /* border: solid red 3px; */
+  display: flex;
+  flex-direction: column;
+}
+.logo-container a {
+  margin: auto;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo-container img {
+  /* border: solid red 3px; */
+  width: 6vw;
+  height: 6vw;
+  margin-top: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: solid red 3px; */
+  margin: auto;
+}
+
+.logo-text > div:nth-child(1) {
+  font-family: Heebo;
+  font-size: 1.3rem;
+  line-height: 1rem;
+}
+.logo-text > div:nth-child(2) {
+  font-family: Inter;
+  font-size: 1rem;
+}
+
+.powered {
+  position: absolute;
+  margin-top: 90vh;
+  color: #ffffffc7;
+  font-family: Inter;
+  font-size: 1rem;
+}
+
+.powered span {
+  font-weight: bold;
+}
+
+.team-banner {
+  color: #45b36a;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4rem; /* 160% */
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 4.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.5rem; /* 100% */
+  letter-spacing: -0.125rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: #ffffffe6;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  width: 70%;
+  margin: auto;
+  line-height: 1.65rem; /* 110% */
+}
+
+.restricted {
+  bottom: 6vh;
+  right: 2vw;
+
+  position: fixed;
+  /* border: solid red 2px; */
+  width: 9rem;
+  color: rgba(255, 140, 0, 0.352);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* .vertical-line {
+  width: 0.1rem;
+
+  align-self: stretch;
+  border-top: 100px solid #45b36a;
+  margin: auto;
+  margin-top: 3rem;
+} */
+
+.category-scroll {
+  display: flex;
+  flex-direction: column;
+  /* border: solid red 3px; */
+  margin-bottom: 8rem;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #46b36ad3;
+  border-radius: 10px;
 }

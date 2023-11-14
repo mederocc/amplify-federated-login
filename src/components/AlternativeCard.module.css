@@ -1,0 +1,78 @@
+.card-container {
+  width: 24.5rem;
+  height: 30.06625rem;
+  flex-shrink: 0;
+  /* border: solid red 3px; */
+  margin: 1.05rem;
+  margin-left: 0;
+  background-color: #17222fc4;
+
+  border: solid #101822c4 1px;
+  transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.card-container:hover {
+  border: solid #45b36aec 1px;
+  background-color: #06060600;
+}
+
+.card-container:hover .title {
+  color: #45b36aec;
+}
+
+.image-container {
+  width: 24.5rem;
+  height: 16.17rem;
+  flex-shrink: 0;
+}
+
+.image-container img {
+  margin-left: 0px;
+  object-fit: fill;
+  height: 100%;
+  opacity: 0.7;
+  width: 99.5%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card-container:hover .image-container img {
+  opacity: 1;
+}
+
+.bottom-container {
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  width: 15.46325rem;
+  min-height: 3.3rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.3125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.44375rem;
+  margin: 0.5rem 0;
+
+  transition: color 0.5s ease-in-out;
+}
+
+.text-container {
+  width: 100%;
+  height: 10.35938rem;
+  flex-shrink: 0;
+  /* border: solid purple 2px; */
+
+  color: #fff;
+
+  font-family: Heebo;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.4rem; /* 160% */
+}
